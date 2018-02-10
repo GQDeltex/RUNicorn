@@ -11,6 +11,7 @@ var BigUnicorns = []
 var border_offset = 75
 var screensize = Vector2()
 var score = 0
+var game_over = false
 
 func _ready():
 	unicorns = []
@@ -21,20 +22,21 @@ func _ready():
 	$Player.connect("attack", self, "_on_Player_attack")
 
 func _process(delta):
-	if Input.is_action_pressed("fullscreen"):
-		OS.set_window_fullscreen(true)
-	if len(unicorns) >= MAX_UNICORNS and unicorns != []:
+	if not game_over:
+		if Input.is_action_pressed("fullscreen"):
+			OS.set_window_fullscreen(true)
+		if len(unicorns) >= MAX_UNICORNS and unicorns != []:
+			for oui in unicorns:
+				oui.follow = false
+			$Timer.stop()
+		if unicorns == [] and score != 0 and $Timer2.is_stopped():
+			change_level()
+		$HUD.value = score
+		$HUD.double = $Player.heart_double
 		for oui in unicorns:
-			oui.follow = false
-		$Timer.stop()
-	if unicorns == [] and score != 0 and $Timer2.is_stopped():
-		change_level()
-	$HUD.value = score
-	$HUD.double = $Player.heart_double
-	for oui in unicorns:
-		oui.player_rect = $Player.rect
-	for boui in BigUnicorns:
-		boui.player_rect = $Player.rect
+			oui.player_rect = $Player.rect
+		for boui in BigUnicorns:
+			boui.player_rect = $Player.rect
 
 func _on_Timer_timeout():
 	randomize()
@@ -43,21 +45,21 @@ func _on_Timer_timeout():
 	var rect = Rect2()
 	while true:
 		var place = true
-		print("Searching place")
+		#print("Searching place")
 		pos = Vector2(rand_range(0, screensize.x), rand_range(0,screensize.y))
 		rect = Rect2(pos, unicorn.get_node("CollisionShape2D").get_shape().get_extents()*2)
 		for oui in unicorns:
 			if rect.intersects(Rect2(oui.rect.grow(2))):
-				print("Other Unicorn here")
+				#print("Other Unicorn here")
 				place = false
 			if rect.intersects(Rect2(border_offset, border_offset, screensize.x-(border_offset*2), screensize.y-(border_offset*2)).grow(2)):
-				print("Can't spawn in middle")
+				#print("Can't spawn in middle")
 				place = false
 			if rect.intersects($Player.rect.grow(2)):
-				print("Player here!")
+				#print("Player here!")
 				place = false
 		if place:
-			print("Found a place")
+			#print("Found a place")
 			break
 	unicorn.position = pos
 	unicorn.rect = rect
@@ -70,8 +72,12 @@ func _on_Timer_timeout():
 	unicorns.append(unicorn)
 
 func _on_Unicorn_hit():
+	print("FUCK OFF!")
+	game_over = true
 	for child in get_children():
 		child.queue_free()
+	unicorns = []
+	BigUnicorns = []
 	var gameOver = load("res://Scenes/GameOver.tscn").instance()
 	$".".add_child(gameOver)
 
@@ -82,17 +88,17 @@ func _on_Timer2_timeout():
 	var rect = Rect2()
 	while true:
 		var place = true
-		print("Searching place")
+		#print("Searching place")
 		pos = Vector2(rand_range(screensize.x-100, screensize.x), rand_range(0,screensize.y))
 		rect = Rect2(pos, unicorn.get_node("CollisionShape2D").get_shape().get_extents()*2)
 		for boui in BigUnicorns:
 			if pos.y-65 <= boui.position.y and pos.y+65 >= boui.position.y:
-				print("Other Unicorn here")
+				#print("Other Unicorn here")
 				place = false
 		if place == true:
-			print("Found a place!")
+			#print("Found a place!")
 			break
-	print("Setup place")
+	#print("Setup place")
 	$".".add_child(unicorn)
 	unicorn.position = pos
 	unicorn.rect = rect

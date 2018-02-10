@@ -1,16 +1,36 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Start.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Startbildschirm.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Unbenannt.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Help000.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Help001.png" type="Texture" id=4]
 
-[node name="Start" type="Node"]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Start" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 509.18, 297.616 )
-scale = Vector2( 7.83951, 10.4593 )
+position = Vector2( 505.017, 302.378 )
+scale = Vector2( 0.999196, 1.03322 )
 texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 695.254, 306.73 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "default"
+playing = true
+_sections_unfolded = [ "Transform" ]
 
 
