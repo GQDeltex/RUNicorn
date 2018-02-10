@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fire01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fire02.png" type="Texture" id=3]
+[ext_resource path="res://Assets/TouchButton.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="HUD" type="Node" index="0"]
 
@@ -42,26 +54,199 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Label2" type="Label" parent="Control" index="1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control" index="1"]
+
+position = Vector2( 78.9671, 85.9831 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 1
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label2" type="Label" parent="Control" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 18.0
-margin_top = 43.0
-margin_right = 76.0
-margin_bottom = 65.0
-rect_scale = Vector2( 2, 2 )
+margin_left = -4.0
+margin_top = 1.0
+margin_right = 253.0
+margin_bottom = 153.0
+rect_scale = Vector2( 4, 4 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "2x"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
+
+[node name="MessageTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="TouchBox" type="Node" parent="." index="2"]
+
+[node name="Up" type="Button" parent="TouchBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 795.0
+margin_top = 383.0
+margin_right = 823.0
+margin_bottom = 405.0
+rect_rotation = -90.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 4 )
+flat = true
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Left" type="Button" parent="TouchBox" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 798.0
+margin_top = 474.0
+margin_right = 826.0
+margin_bottom = 496.0
+rect_rotation = 180.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 4 )
+flat = true
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Right" type="Button" parent="TouchBox" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 886.0
+margin_top = 385.0
+margin_right = 914.0
+margin_bottom = 407.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 4 )
+flat = true
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Down" type="Button" parent="TouchBox" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 888.0
+margin_top = 473.0
+margin_right = 916.0
+margin_bottom = 495.0
+rect_rotation = 90.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 4 )
+flat = true
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Button" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 962.0
+margin_top = 22.0
+margin_right = 982.0
+margin_bottom = 42.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
+
+[connection signal="button_down" from="TouchBox/Up" to="." method="_on_Up_button_down"]
+
+[connection signal="button_up" from="TouchBox/Up" to="." method="_on_Up_button_up"]
+
+[connection signal="button_down" from="TouchBox/Left" to="." method="_on_Left_button_down"]
+
+[connection signal="button_up" from="TouchBox/Left" to="." method="_on_Left_button_up"]
+
+[connection signal="button_down" from="TouchBox/Right" to="." method="_on_Button_button_down"]
+
+[connection signal="button_up" from="TouchBox/Right" to="." method="_on_Button_button_up"]
+
+[connection signal="button_down" from="TouchBox/Down" to="." method="_on_Down_button_down"]
+
+[connection signal="button_up" from="TouchBox/Down" to="." method="_on_Down_button_up"]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 
 

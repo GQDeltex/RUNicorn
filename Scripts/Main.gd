@@ -3,7 +3,7 @@ extends Node2D
 onready var UnicornPack = preload("res://Scenes/Unicorn.tscn")
 onready var BigUnicornPack = preload("res://Scenes/BigUnicorn.tscn")
 
-var MAX_UNICORNS = 5
+var MAX_UNICORNS = 13
 
 var pos = Vector2()
 var unicorns = []
@@ -21,6 +21,7 @@ func _ready():
 	$Player.mud_rect = Rect2($Area2D.get_node("CollisionShape2D_mud").position, $Area2D.get_node("CollisionShape2D_mud").get_shape().get_extents()/2)
 	$Player.rainbow_rect = Rect2($Area2D2.get_node("CollisionShape2D_rainbow").position, $Area2D2.get_node("CollisionShape2D_rainbow").get_shape().get_extents()*2)
 	$Player.connect("attack", self, "_on_Player_attack")
+	$HUD.display("Start!", 2)
 
 func _process(delta):
 	if not game_over:
@@ -96,7 +97,7 @@ func _on_Timer2_timeout():
 		pos = Vector2(rand_range(screensize.x+100, screensize.x), rand_range(0,screensize.y))
 		rect = Rect2(pos, unicorn.get_node("CollisionShape2D").get_shape().get_extents()*2)
 		for boui in BigUnicorns:
-			if pos.y-65 <= boui.position.y and pos.y+65 >= boui.position.y:
+			if pos.y-boui.get_node("CollisionShape2D").get_shape().get_extents().y*2 <= boui.position.y and pos.y+boui.get_node("CollisionShape2D").get_shape().get_extents().y*2 >= boui.position.y:
 				#print("Other Unicorn here")
 				place = false
 		if place == true:
@@ -115,6 +116,7 @@ func _on_Timer2_timeout():
 
 func change_level():
 	print("Change!")
+	$HUD.display("Level2", 3)
 	$BigUnicornSpawn.start()
 	$SpawnCountdown.start()
 

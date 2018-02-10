@@ -16,7 +16,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 43.9762, 32.8739 )
+extents = Vector2( 43.9762, 36.6374 )
 
 [node name="BigUnicorn" type="RigidBody2D"]
 
@@ -42,16 +42,16 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
+position = Vector2( 0.397217, 0 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.440125, 18.0452 )
+position = Vector2( -0.0429077, 18.0452 )
 shape = SubResource( 2 )
 
 

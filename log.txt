@@ -1,0 +1,83 @@
+OpenGL ES 3.0 Renderer: Mesa DRI Intel(R) Haswell Mobile 
+GLES3: max ubo light: 409
+GLES3: max ubo reflections: 455, ubo size: 144
+ARVR: Registered interface: Native mobile
+exporting res://Scenes/BigUnicorn.tscn
+exporting res://Scenes/GameOver.tscn
+exporting res://Scenes/HUD.tscn
+exporting res://Scenes/Main.tscn
+exporting res://Scenes/Player.tscn
+exporting res://Scenes/Start.tscn
+exporting res://Scenes/Unicorn.tscn
+exporting res://Tileset.tres
+exporting res://default_env.tres
+exporting res://Scenes/BigUnicorn.tscn
+exporting res://Scenes/GameOver.tscn
+exporting res://Scenes/HUD.tscn
+exporting res://Scenes/Main.tscn
+exporting res://Scenes/Player.tscn
+exporting res://Scenes/Start.tscn
+exporting res://Scenes/Unicorn.tscn
+exporting res://Tileset.tres
+exporting res://default_env.tres
+exporting res://Scenes/BigUnicorn.tscn
+exporting res://Scenes/GameOver.tscn
+exporting res://Scenes/HUD.tscn
+exporting res://Scenes/Main.tscn
+exporting res://Scenes/Player.tscn
+exporting res://Scenes/Start.tscn
+exporting res://Scenes/Unicorn.tscn
+exporting res://Tileset.tres
+exporting res://default_env.tres
+exporting res://Scenes/BigUnicorn.tscn
+exporting res://Scenes/GameOver.tscn
+exporting res://Scenes/HUD.tscn
+exporting res://Scenes/Main.tscn
+exporting res://Scenes/Player.tscn
+exporting res://Scenes/Start.tscn
+exporting res://Scenes/Unicorn.tscn
+exporting res://Tileset.tres
+exporting res://default_env.tres
+exporting res://Scenes/BigUnicorn.tscn
+exporting res://Scenes/GameOver.tscn
+exporting res://Scenes/HUD.tscn
+exporting res://Scenes/Main.tscn
+exporting res://Scenes/Player.tscn
+exporting res://Scenes/Start.tscn
+exporting res://Scenes/Unicorn.tscn
+exporting res://Tileset.tres
+exporting res://default_env.tres
+binary: godot_osx_debug.fat
+READ: osx_template.app/
+READ: osx_template.app/Contents/
+READ: osx_template.app/Contents/Resources/
+READ: osx_template.app/Contents/Resources/icon.icns
+icon? res://Assets/DATEinhorn.png
+loaded?
+ADDING: Contents/Resources/icon.icns size: 116060
+OPEN ERR: 0
+WRITE ERR: 0
+READ: osx_template.app/Contents/MacOS/
+READ: osx_template.app/Contents/MacOS/godot_osx_debug.fat
+ADDING: Contents/MacOS/RUnicorn size: 80277704
+OPEN ERR: 0
+WRITE ERR: 0
+READ: osx_template.app/Contents/MacOS/godot_osx_release.fat
+READ: osx_template.app/Contents/PkgInfo
+ADDING: Contents/PkgInfo size: 9
+OPEN ERR: 0
+WRITE ERR: 0
+READ: osx_template.app/Contents/Info.plist
+parse plist
+ADDING: Contents/Info.plist size: 1132
+OPEN ERR: 0
+WRITE ERR: 0
+exporting res://Scenes/BigUnicorn.tscn
+exporting res://Scenes/GameOver.tscn
+exporting res://Scenes/HUD.tscn
+exporting res://Scenes/Main.tscn
+exporting res://Scenes/Player.tscn
+exporting res://Scenes/Start.tscn
+exporting res://Scenes/Unicorn.tscn
+exporting res://Tileset.tres
+exporting res://default_env.tres

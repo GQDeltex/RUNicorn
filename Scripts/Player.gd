@@ -10,16 +10,17 @@ var mud_rect = Rect2(0,0,0,0)
 var rainbow_rect = Rect2(0,0,0,0)
 var SPEED_NOW = 40
 var heart_double = false
+var HUD
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+	HUD = $".".get_parent().get_node(".").get_node("HUD")
 	screensize = get_viewport_rect().size
 
 func _process(delta):
 	var SPEED_NOW = SPEED
 	rect = Rect2(position, $CollisionShape2D.get_shape().get_extents()*2)
 	velocity = Vector2()
+	velocity = HUD.direction
 	if Input.is_action_pressed("game_right"):
 		velocity.x += 1
 		$AnimatedSprite.flip_h = true

@@ -18,21 +18,21 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 235.767, 168.889 )
+extents = Vector2( 241.123, 181.115 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 140, 130 )
+extents = Vector2( 124.939, 115.745 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 511.92, 299 )
+position = Vector2( 508.905, 299 )
 scale = Vector2( 1.03141, 1.03667 )
 frames = SubResource( 1 )
 animation = "default"
@@ -58,7 +58,14 @@ wait_time = 3.0
 one_shot = false
 autostart = false
 
-[node name="Area2D" type="Area2D" parent="." index="4"]
+[node name="Level3Spawn" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Area2D" type="Area2D" parent="." index="5"]
 
 position = Vector2( -4, -4 )
 scale = Vector2( 1.125, 1.125 )
@@ -72,11 +79,11 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D_mud" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( 474.667, 252.444 )
+position = Vector2( 376.062, 158.311 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area2D2" type="Area2D" parent="." index="5"]
+[node name="Area2D2" type="Area2D" parent="." index="6"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -89,7 +96,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D_rainbow" type="CollisionShape2D" parent="Area2D2" index="0"]
 
-position = Vector2( 540, 280 )
+position = Vector2( 429.07, 174.702 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
@@ -99,18 +106,11 @@ position = Vector2( 526, 294.141 )
 scale = Vector2( 0.480469, 0.480469 )
 texture = ExtResource( 3 )
 
-[node name="Player" parent="." index="6" instance=ExtResource( 4 )]
+[node name="Player" parent="." index="7" instance=ExtResource( 4 )]
 
-position = Vector2( 540, 290 )
+position = Vector2( 766.469, 298.067 )
 
-[node name="HUD" parent="." index="7" instance=ExtResource( 5 )]
-
-[node name="Level3Spawn" type="Timer" parent="." index="8"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
+[node name="HUD" parent="." index="8" instance=ExtResource( 5 )]
 
 [connection signal="timeout" from="UnicornSpawn" to="." method="_on_Timer_timeout"]
 
