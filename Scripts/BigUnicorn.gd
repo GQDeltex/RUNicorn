@@ -16,7 +16,7 @@ func _process(delta):
 	velocity = Vector2()
 	if rect.intersects(player_rect):
 		print("BIGGG UNICORN!")
-		emit_signal("hit", self)
+		emit_signal("hit")
 	velocity.x -= 1
 	$Sprite.flip_h = true
 	if velocity.length() > 0:

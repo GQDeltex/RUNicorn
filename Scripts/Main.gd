@@ -3,7 +3,7 @@ extends Node2D
 onready var UnicornPack = preload("res://Scenes/Unicorn.tscn")
 onready var BigUnicornPack = preload("res://Scenes/BigUnicorn.tscn")
 
-var MAX_UNICORNS = 12
+var MAX_UNICORNS = 13
 
 var pos = Vector2()
 var unicorns = []
@@ -12,6 +12,7 @@ var border_offset = 75
 var screensize = Vector2()
 var score = 0
 var game_over = false
+var Speedup = 150
 
 func _ready():
 	unicorns = []
@@ -36,6 +37,7 @@ func _process(delta):
 		for oui in unicorns:
 			oui.player_rect = $Player.rect
 		for boui in BigUnicorns:
+			boui.SPEED = Speedup
 			boui.player_rect = $Player.rect
 
 func _on_Timer_timeout():
@@ -72,7 +74,7 @@ func _on_Timer_timeout():
 	unicorns.append(unicorn)
 
 func _on_Unicorn_hit():
-	print("FUCK OFF!")
+	#print("FUCK OFF!")
 	game_over = true
 	for child in get_children():
 		child.queue_free()
@@ -86,10 +88,12 @@ func _on_Timer2_timeout():
 	var unicorn = BigUnicornPack.instance()
 	var pos = Vector2()
 	var rect = Rect2()
+	var count = 0
 	while true:
+		count += 1
 		var place = true
 		#print("Searching place")
-		pos = Vector2(rand_range(screensize.x-100, screensize.x), rand_range(0,screensize.y))
+		pos = Vector2(rand_range(screensize.x+100, screensize.x), rand_range(0,screensize.y))
 		rect = Rect2(pos, unicorn.get_node("CollisionShape2D").get_shape().get_extents()*2)
 		for boui in BigUnicorns:
 			if pos.y-65 <= boui.position.y and pos.y+65 >= boui.position.y:
@@ -98,6 +102,9 @@ func _on_Timer2_timeout():
 		if place == true:
 			#print("Found a place!")
 			break
+		if place == false and count > 10:
+			unicorn.queue_free()
+			return
 	#print("Setup place")
 	$".".add_child(unicorn)
 	unicorn.position = pos
@@ -114,6 +121,8 @@ func change_level():
 func _on_Timer3_timeout():
 	if $Timer2.is_stopped() == false:
 		#print($Timer2.wait_time)
+		Speedup += 10
+		#print(Speedup)
 		$Timer2.wait_time = $Timer2.wait_time - 0.1
 		#print("FASTER!!!!")
 
