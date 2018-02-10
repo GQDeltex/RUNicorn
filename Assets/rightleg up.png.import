@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame_5_delay-0.03s.png-3cfe3b59cfe255cf6f6d8363287ef4d8.stex"
+path="res://.import/rightleg up.png-1e6a39d0c38682cd4dcfe1e85831ecca.stex"
 
 [deps]
 
-source_file="res://Assets/NoiseGif/frame_5_delay-0.03s.png"
-source_md5="303cdbb791ea6c03976b3449090410d4"
+source_file="res://Assets/rightleg up.png"
+source_md5="e0d2c34e94c72f53c4e1ed57113c0b12"
 
-dest_files=[ "res://.import/frame_5_delay-0.03s.png-3cfe3b59cfe255cf6f6d8363287ef4d8.stex" ]
-dest_md5="7d58ee8b871eaf33128a9dac48f055fa"
+dest_files=[ "res://.import/rightleg up.png-1e6a39d0c38682cd4dcfe1e85831ecca.stex" ]
+dest_md5="e126bc7688fb3273e94a848d12b66ce0"
 
 [params]
 

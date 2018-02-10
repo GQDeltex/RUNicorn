@@ -3,7 +3,7 @@ extends Node2D
 onready var UnicornPack = preload("res://Scenes/Unicorn.tscn")
 onready var BigUnicornPack = preload("res://Scenes/BigUnicorn.tscn")
 
-var MAX_UNICORNS = 13
+var MAX_UNICORNS = 5
 
 var pos = Vector2()
 var unicorns = []
@@ -29,8 +29,8 @@ func _process(delta):
 		if len(unicorns) >= MAX_UNICORNS and unicorns != []:
 			for oui in unicorns:
 				oui.follow = false
-			$Timer.stop()
-		if unicorns == [] and score != 0 and $Timer2.is_stopped():
+			$UnicornSpawn.stop()
+		if unicorns == [] and score != 0 and $BigUnicornSpawn.is_stopped():
 			change_level()
 		$HUD.value = score
 		$HUD.double = $Player.heart_double
@@ -115,15 +115,15 @@ func _on_Timer2_timeout():
 
 func change_level():
 	print("Change!")
-	$Timer2.start()
-	$Timer3.start()
+	$BigUnicornSpawn.start()
+	$SpawnCountdown.start()
 
 func _on_Timer3_timeout():
-	if $Timer2.is_stopped() == false:
-		#print($Timer2.wait_time)
+	if $BigUnicornSpawn.is_stopped() == false:
+		#print($BigUnicornSpawn.wait_time)
 		Speedup += 10
 		#print(Speedup)
-		$Timer2.wait_time = $Timer2.wait_time - 0.1
+		$BigUnicornSpawn.wait_time = $BigUnicornSpawn.wait_time - 0.1
 		#print("FASTER!!!!")
 
 func _on_Unicorn_die(instance):

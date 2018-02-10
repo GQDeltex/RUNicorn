@@ -22,16 +22,14 @@ func _process(delta):
 	velocity = Vector2()
 	if Input.is_action_pressed("game_right"):
 		velocity.x += 1
-		$AnimatedSprite.rotation_degrees = 0
+		$AnimatedSprite.flip_h = true
 	if Input.is_action_pressed("game_left"):
 		velocity.x -= 1
-		$AnimatedSprite.rotation_degrees = 180
+		$AnimatedSprite.flip_h = false
 	if Input.is_action_pressed("game_down"):
 		velocity.y += 1
-		$AnimatedSprite.rotation_degrees = 90
 	if Input.is_action_pressed("game_up"):
 		velocity.y -= 1
-		$AnimatedSprite.rotation_degrees = -90
 	if self.rect.intersects(mud_rect):
 		SPEED_NOW = SPEED / 5
 	if self.rect.intersects(rainbow_rect):

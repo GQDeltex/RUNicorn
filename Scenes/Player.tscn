@@ -1,19 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Locatonist.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Locatonist_Walk1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Locatonist_Walk2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Playermodel.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Playermodel01.png" type="Texture" id=3]
+[ext_resource path="res://Assets/rightleg up.png" type="Texture" id=4]
+[ext_resource path="res://Assets/leftleg up.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -22,9 +23,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 29.0315, 24.4145 )
+extents = Vector2( 29.0315, 31.1363 )
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -39,16 +40,17 @@ SPEED = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( -2.0465, -1.57167 )
+position = Vector2( 14.9535, -1.57167 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.643913, 1.28783 )
+position = Vector2( -0.0195084, -6.67321 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 

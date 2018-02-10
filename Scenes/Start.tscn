@@ -14,7 +14,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Start" type="Node" index="0"]
+[node name="Start" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -26,7 +26,7 @@ texture = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
-position = Vector2( 958.042, 545.459 )
+position = Vector2( 930.349, 537.906 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "default"

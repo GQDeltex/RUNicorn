@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame_2_delay-0.03s.png-8c1ee11b90c32868bbb70e3a289edd64.stex"
+path="res://.import/Uncorn02.png-8ed2d88b19ac9ef2924d252dd897073d.stex"
 
 [deps]
 
-source_file="res://Assets/NoiseGif/frame_2_delay-0.03s.png"
-source_md5="880d7654d31da5de9b907f3406dcb195"
+source_file="res://Assets/Uncorn02.png"
+source_md5="164ee9eabeb5932a6acfabb6b4d633cc"
 
-dest_files=[ "res://.import/frame_2_delay-0.03s.png-8c1ee11b90c32868bbb70e3a289edd64.stex" ]
-dest_md5="7bc96c2490ce630445632c8df4f61de2"
+dest_files=[ "res://.import/Uncorn02.png-8ed2d88b19ac9ef2924d252dd897073d.stex" ]
+dest_md5="04940c4558b0245b10f5927ace535506"
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame_8_delay-0.03s.png-d67d4473fe634bdc2313ba4bf1f82dcb.stex"
+path="res://.import/Playermodel01.png-8623eeb057685a8558a4890a2eaf8345.stex"
 
 [deps]
 
-source_file="res://Assets/NoiseGif/frame_8_delay-0.03s.png"
-source_md5="450b6db86838f4ced000825f306a69c8"
+source_file="res://Assets/Playermodel01.png"
+source_md5="8125325e9e3be6d4f1506520ddb29c58"
 
-dest_files=[ "res://.import/frame_8_delay-0.03s.png-d67d4473fe634bdc2313ba4bf1f82dcb.stex" ]
-dest_md5="053b9c4c89e8567fa1f2f27fdb728a24"
+dest_files=[ "res://.import/Playermodel01.png-8623eeb057685a8558a4890a2eaf8345.stex" ]
+dest_md5="15501dc90933f4e805eb418a4cdacc1b"
 
 [params]
 

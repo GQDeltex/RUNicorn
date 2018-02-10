@@ -8,6 +8,8 @@ func _ready():
 	$Label.text = "Highscore:" + str($".".get_parent().get_node(".").score)
 
 func _process(delta):
+	if Input.is_action_pressed("reload"):
+		get_tree().change_scene("res://Scenes/Main.tscn")
 	if Input.is_action_pressed("fullscreen"):
 		OS.set_window_fullscreen(true)
 

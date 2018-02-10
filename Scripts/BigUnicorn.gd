@@ -18,7 +18,6 @@ func _process(delta):
 		print("BIGGG UNICORN!")
 		emit_signal("hit")
 	velocity.x -= 1
-	$Sprite.flip_h = true
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * SPEED
 	position += velocity * delta
