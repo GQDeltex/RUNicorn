@@ -1,7 +1,16 @@
+CREATING RENDER THREAD
+STARTING RENDER THREAD
 OpenGL ES 3.0 Renderer: Mesa DRI Intel(R) Haswell Mobile 
 GLES3: max ubo light: 409
-GLES3: max ubo reflections: 455, ubo size: 144
-ARVR: Registered interface: Native mobile
+GLES3: max ubo reflections: 455, ubo size: exporting res://Scenes/BigUnicorn.tscn
+exporting res://Scenes/GameOver.tscn
+exporting res://Scenes/HUD.tscn
+exporting res://Scenes/Main.tscn
+exporting res://Scenes/Player.tscn
+exporting res://Scenes/SafeRect.tscn
+exporting res://Scenes/Start.tscn
+exporting res://Scenes/Unicorn.tscn
+exporting res://default_env.tres
 exporting res://Scenes/BigUnicorn.tscn
 exporting res://Scenes/GameOver.tscn
 exporting res://Scenes/HUD.tscn
@@ -63,15 +72,6 @@ parse plist
 ADDING: Contents/Info.plist size: 1132
 OPEN ERR: 0
 WRITE ERR: 0
-exporting res://Scenes/BigUnicorn.tscn
-exporting res://Scenes/GameOver.tscn
-exporting res://Scenes/HUD.tscn
-exporting res://Scenes/Main.tscn
-exporting res://Scenes/Player.tscn
-exporting res://Scenes/SafeRect.tscn
-exporting res://Scenes/Start.tscn
-exporting res://Scenes/Unicorn.tscn
-exporting res://default_env.tres
 exporting res://Scenes/BigUnicorn.tscn
 exporting res://Scenes/GameOver.tscn
 exporting res://Scenes/HUD.tscn
