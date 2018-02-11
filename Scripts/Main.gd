@@ -1,11 +1,11 @@
 extends Node2D
 
-var UnicornPack = preload("res://Scenes/Unicorn.tscn")
-var BigUnicornPack = preload("res://Scenes/BigUnicorn.tscn")
-var SafeRect = preload("res://Scenes/SafeRect.tscn")
+onready var UnicornPack = preload("res://Scenes/Unicorn.tscn")
+onready var BigUnicornPack = preload("res://Scenes/BigUnicorn.tscn")
+onready var SafeRect = preload("res://Scenes/SafeRect.tscn")
 
-var MAX_UNICORNS = 5
-var SCORE_2 = 12
+var MAX_UNICORNS = 12
+var SCORE_2 = 50
 var LVL3_MAX = 20
 
 var level = 1
