@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rightleg up.png-1e6a39d0c38682cd4dcfe1e85831ecca.stex"
+path="res://.import/Safe.png-80146b7b67321f5efbaa0fef4d279291.stex"
 
 [deps]
 
-source_file="res://Assets/rightleg up.png"
-source_md5="ef63d559b0204e1ae06db660db10eb5d"
+source_file="res://Assets/Safe.png"
+source_md5="6bbc1c1223535a8269d6297648fe1bd7"
 
-dest_files=[ "res://.import/rightleg up.png-1e6a39d0c38682cd4dcfe1e85831ecca.stex" ]
-dest_md5="9b0bdd68bdda18832185bb8ecdcc3c8e"
+dest_files=[ "res://.import/Safe.png-80146b7b67321f5efbaa0fef4d279291.stex" ]
+dest_md5="c036ff713f936f3c580490512bd61a1d"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

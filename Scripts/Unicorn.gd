@@ -1,8 +1,10 @@
 extends RigidBody2D
 
 signal hit
+signal die
 
 var rect = Rect2()
+var safe_rect = Rect2(0,0,0,0)
 var player_rect = Rect2()
 var velocity = Vector2()
 var SPEED = 40
@@ -43,7 +45,8 @@ func _process(delta):
 		position.x = clamp(position.x, 0, screensize.x)
 		position.y = clamp(position.y, 0, screensize.y)
 	rect = Rect2(position.x, position.y, $CollisionShape2D.get_shape().get_extents().x*2, $CollisionShape2D.get_shape().get_extents().y*2)
+	if rect.intersects($".".get_parent().get_node(".").safe_rect):
+		emit_signal("die", self)
 	if position.x < -40 or position.x > screensize.x+40 or \
 	   position.y < -40 or position.y > screensize.y+40:
-		self.get_parent().get_node(".").unicorns.remove(self.get_parent().get_node(".").unicorns.find(self))
-		self.queue_free()
+		emit_signal("die", self)

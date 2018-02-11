@@ -1,9 +1,14 @@
 extends Node2D
 
-onready var UnicornPack = preload("res://Scenes/Unicorn.tscn")
-onready var BigUnicornPack = preload("res://Scenes/BigUnicorn.tscn")
+var UnicornPack = preload("res://Scenes/Unicorn.tscn")
+var BigUnicornPack = preload("res://Scenes/BigUnicorn.tscn")
+var SafeRect = preload("res://Scenes/SafeRect.tscn")
 
-var MAX_UNICORNS = 13
+var MAX_UNICORNS = 5
+var SCORE_2 = 12
+var LVL3_MAX = 20
+
+var level = 1
 
 var pos = Vector2()
 var unicorns = []
@@ -13,6 +18,7 @@ var screensize = Vector2()
 var score = 0
 var game_over = false
 var Speedup = 150
+var safe_rect = Rect2(0,0,0,0)
 
 func _ready():
 	unicorns = []
@@ -27,16 +33,31 @@ func _process(delta):
 	if not game_over:
 		if Input.is_action_pressed("fullscreen"):
 			OS.set_window_fullscreen(true)
-		if len(unicorns) >= MAX_UNICORNS and unicorns != []:
+		if len(unicorns) >= MAX_UNICORNS and unicorns != [] and score < SCORE_2:
 			for oui in unicorns:
 				oui.follow = false
 			$UnicornSpawn.stop()
-		if unicorns == [] and score != 0 and $BigUnicornSpawn.is_stopped():
+		if unicorns == [] and 0 < score and score < SCORE_2 and $BigUnicornSpawn.is_stopped():
 			change_level()
+		if score == SCORE_2 or score == (SCORE_2+1):
+			if ($Level2Cooldown.is_stopped()) and ($SpawnCountdown.is_stopped() == false):
+				$HUD.display("Level 3", 3)
+				$Level2Cooldown.start()
+				$BigUnicornSpawn.stop()
+				$SpawnCountdown.stop()
+		if level == 3 and unicorns == [] and $Level2Cooldown.is_stopped():
+			$Player.SPEED = $Player.SPEED - 10
+			level = 1
+			SCORE_2 += score
+			print(SCORE_2)
+			get_node("SafeRect").queue_free()
+			_on_Timer_timeout()
+			$UnicornSpawn.start()
 		$HUD.value = score
 		$HUD.double = $Player.heart_double
 		for oui in unicorns:
 			oui.player_rect = $Player.rect
+			oui.safe_rect = safe_rect
 		for boui in BigUnicorns:
 			boui.SPEED = Speedup
 			boui.player_rect = $Player.rect
@@ -46,7 +67,9 @@ func _on_Timer_timeout():
 	var unicorn = UnicornPack.instance()
 	var pos = Vector2()
 	var rect = Rect2()
+	var count = 0
 	while true:
+		count += 1
 		var place = true
 		#print("Searching place")
 		pos = Vector2(rand_range(0, screensize.x), rand_range(0,screensize.y))
@@ -64,10 +87,14 @@ func _on_Timer_timeout():
 		if place:
 			#print("Found a place")
 			break
+		if place == false and count > 10:
+			unicorn.queue_free()
+			return
 	unicorn.position = pos
 	unicorn.rect = rect
 	$".".add_child(unicorn)
 	unicorn.connect("hit", self, "_on_Unicorn_hit")
+	unicorn.connect("die", self, "_on_Unicorn_die")
 	if $Player.heart_double:
 		score += 2
 	else:
@@ -111,12 +138,13 @@ func _on_Timer2_timeout():
 	unicorn.position = pos
 	unicorn.rect = rect
 	unicorn.connect("hit", self, "_on_Unicorn_hit")
-	unicorn.connect("die", self, "_on_Unicorn_die")
+	unicorn.connect("die", self, "_on_BigUnicorn_die")
 	BigUnicorns.append(unicorn)
 
 func change_level():
-	print("Change!")
+	print("Level 2")
 	$HUD.display("Level2", 3)
+	level = 2
 	$BigUnicornSpawn.start()
 	$SpawnCountdown.start()
 
@@ -130,8 +158,24 @@ func _on_Timer3_timeout():
 
 func _on_Unicorn_die(instance):
 	instance.queue_free()
+	unicorns.remove(unicorns.find(instance))
+
+func _on_BigUnicorn_die(instance):
+	instance.queue_free()
 	BigUnicorns.remove(BigUnicorns.find(instance))
 	if $Player.heart_double:
 		score += 2
 	else:
 		score += 1
+
+
+func _on_Level2Cooldown_timeout():
+	print("Level 3")
+	level = 3
+	var safe = SafeRect.instance()
+	safe.position = Vector2(rand_range(0, screensize.x), rand_range(0,screensize.y))
+	safe_rect = Rect2(safe.position, Vector2(32*6, 32*6))
+	$".".add_child(safe)
+	$".".move_child(safe, 4)
+	for i in range(0, LVL3_MAX):
+		_on_Timer_timeout()

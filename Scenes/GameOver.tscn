@@ -57,7 +57,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Quit"
+text = "Main Menu"
 flat = false
 align = 1
 

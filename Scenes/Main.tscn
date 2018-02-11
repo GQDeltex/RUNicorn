@@ -25,10 +25,10 @@ extents = Vector2( 241.123, 181.115 )
 custom_solver_bias = 0.0
 extents = Vector2( 124.939, 115.745 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Pause" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -37,35 +37,7 @@ scale = Vector2( 1.03141, 1.03667 )
 frames = SubResource( 1 )
 animation = "default"
 
-[node name="UnicornSpawn" type="Timer" parent="." index="1"]
-
-process_mode = 1
-wait_time = 2.0
-one_shot = false
-autostart = true
-
-[node name="BigUnicornSpawn" type="Timer" parent="." index="2"]
-
-process_mode = 1
-wait_time = 2.0
-one_shot = false
-autostart = false
-
-[node name="SpawnCountdown" type="Timer" parent="." index="3"]
-
-process_mode = 1
-wait_time = 3.0
-one_shot = false
-autostart = false
-
-[node name="Level3Spawn" type="Timer" parent="." index="4"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
-
-[node name="Area2D" type="Area2D" parent="." index="5"]
+[node name="Area2D" type="Area2D" parent="." index="1"]
 
 position = Vector2( -4, -4 )
 scale = Vector2( 1.125, 1.125 )
@@ -83,7 +55,7 @@ position = Vector2( 376.062, 158.311 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area2D2" type="Area2D" parent="." index="6"]
+[node name="Area2D2" type="Area2D" parent="." index="2"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -105,6 +77,35 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 526, 294.141 )
 scale = Vector2( 0.480469, 0.480469 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="UnicornSpawn" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = true
+
+[node name="BigUnicornSpawn" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = false
+
+[node name="SpawnCountdown" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
+
+[node name="Level2Cooldown" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
 
 [node name="Player" parent="." index="7" instance=ExtResource( 4 )]
 
@@ -117,5 +118,7 @@ position = Vector2( 766.469, 298.067 )
 [connection signal="timeout" from="BigUnicornSpawn" to="." method="_on_Timer2_timeout"]
 
 [connection signal="timeout" from="SpawnCountdown" to="." method="_on_Timer3_timeout"]
+
+[connection signal="timeout" from="Level2Cooldown" to="." method="_on_Level2Cooldown_timeout"]
 
 

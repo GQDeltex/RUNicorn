@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Safe.png" type="Texture" id=1]
+
+[node name="SafeRect" type="Sprite"]
+
+scale = Vector2( 6, 6 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+

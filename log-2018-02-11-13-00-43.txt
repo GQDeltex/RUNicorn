@@ -1,4 +1,9 @@
+CREATING RENDER THREAD
+STARTING RENDER THREAD
 OpenGL ES 3.0 Renderer: Mesa DRI Intel(R) Haswell Mobile 
 GLES3: max ubo light: 409
 GLES3: max ubo reflections: 455, ubo size: 144
+DONE RENDER THREAD
 ARVR: Registered interface: Native mobile
+Level 2
+Level 3
