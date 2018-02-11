@@ -38,6 +38,15 @@ exporting res://Scenes/SafeRect.tscn
 exporting res://Scenes/Start.tscn
 exporting res://Scenes/Unicorn.tscn
 exporting res://default_env.tres
+exporting res://Scenes/BigUnicorn.tscn
+exporting res://Scenes/GameOver.tscn
+exporting res://Scenes/HUD.tscn
+exporting res://Scenes/Main.tscn
+exporting res://Scenes/Player.tscn
+exporting res://Scenes/SafeRect.tscn
+exporting res://Scenes/Start.tscn
+exporting res://Scenes/Unicorn.tscn
+exporting res://default_env.tres
 binary: godot_osx_debug.fat
 READ: osx_template.app/
 READ: osx_template.app/Contents/
@@ -50,7 +59,7 @@ OPEN ERR: 0
 WRITE ERR: 0
 READ: osx_template.app/Contents/MacOS/
 READ: osx_template.app/Contents/MacOS/godot_osx_debug.fat
-ADDING: Contents/MacOS/RUnicorn size: 80277704
+ADDING: Contents/MacOS/RUNicorn size: 80277704
 OPEN ERR: 0
 WRITE ERR: 0
 READ: osx_template.app/Contents/MacOS/godot_osx_release.fat
@@ -63,15 +72,6 @@ parse plist
 ADDING: Contents/Info.plist size: 1132
 OPEN ERR: 0
 WRITE ERR: 0
-exporting res://Scenes/BigUnicorn.tscn
-exporting res://Scenes/GameOver.tscn
-exporting res://Scenes/HUD.tscn
-exporting res://Scenes/Main.tscn
-exporting res://Scenes/Player.tscn
-exporting res://Scenes/SafeRect.tscn
-exporting res://Scenes/Start.tscn
-exporting res://Scenes/Unicorn.tscn
-exporting res://default_env.tres
 exporting res://Scenes/BigUnicorn.tscn
 exporting res://Scenes/GameOver.tscn
 exporting res://Scenes/HUD.tscn
