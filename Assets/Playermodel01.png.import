@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/Playermodel01.png-8623eeb057685a8558a4890a2eaf8345.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Assets/Playermodel01.png"
-source_md5="0a71c8a2c32ed021d24d4dd04a976e74"
-
 dest_files=[ "res://.import/Playermodel01.png-8623eeb057685a8558a4890a2eaf8345.stex" ]
-dest_md5="cd3e72a6fc6a14ff8b3fcbfffc466b6f"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

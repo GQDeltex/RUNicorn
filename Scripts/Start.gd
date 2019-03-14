@@ -8,8 +8,10 @@ func _ready():
 	pass
 
 func _process(delta):
-	if Input.is_action_pressed("fullscreen"):
-		OS.set_window_fullscreen(true)
+	if Input.is_action_just_pressed("fullscreen"):
+		var fullscreen = OS.is_window_fullscreen()
+		print(fullscreen)
+		OS.set_window_fullscreen(not fullscreen)
 	if Input.is_action_pressed("start_h"):
 		get_tree().change_scene("res://Scenes/Main.tscn")
 

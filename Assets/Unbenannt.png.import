@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/Unbenannt.png-fc495fd243e9e7b960de9c3c1887221e.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Assets/Unbenannt.png"
-source_md5="af22c6d689be99e7c633f75c79681feb"
-
 dest_files=[ "res://.import/Unbenannt.png-fc495fd243e9e7b960de9c3c1887221e.stex" ]
-dest_md5="3a1c12fa03435f4e6c441a6657e167d8"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/rightleg up.png-1e6a39d0c38682cd4dcfe1e85831ecca.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Assets/rightleg up.png"
-source_md5="ef63d559b0204e1ae06db660db10eb5d"
-
 dest_files=[ "res://.import/rightleg up.png-1e6a39d0c38682cd4dcfe1e85831ecca.stex" ]
-dest_md5="9b0bdd68bdda18832185bb8ecdcc3c8e"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/DATEinhorn.png-eb8580619e02335f651a4325c89fcb88.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Assets/DATEinhorn.png"
-source_md5="8662dcc271b9cef2f59ad661762a8aba"
-
 dest_files=[ "res://.import/DATEinhorn.png-eb8580619e02335f651a4325c89fcb88.stex" ]
-dest_md5="516d368743846b8e3cc0a78ae309b362"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

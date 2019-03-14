@@ -4,7 +4,7 @@ onready var UnicornPack = preload("res://Scenes/Unicorn.tscn")
 onready var BigUnicornPack = preload("res://Scenes/BigUnicorn.tscn")
 onready var SafeRect = preload("res://Scenes/SafeRect.tscn")
 
-var MAX_UNICORNS = 12
+var MAX_UNICORNS = 10
 var SCORE_2 = 50
 var LVL3_MAX = 20
 
@@ -31,8 +31,10 @@ func _ready():
 
 func _process(delta):
 	if not game_over:
-		if Input.is_action_pressed("fullscreen"):
-			OS.set_window_fullscreen(true)
+		if Input.is_action_just_pressed("fullscreen"):
+			OS.set_window_fullscreen(not OS.is_window_fullscreen())
+		if len(unicorns) >= MAX_UNICORNS:
+			print(len(unicorns))
 		if len(unicorns) >= MAX_UNICORNS and unicorns != [] and score < SCORE_2:
 			for oui in unicorns:
 				oui.follow = false
@@ -75,7 +77,7 @@ func _on_Timer_timeout():
 		pos = Vector2(rand_range(0, screensize.x), rand_range(0,screensize.y))
 		rect = Rect2(pos, unicorn.get_node("CollisionShape2D").get_shape().get_extents()*2)
 		for oui in unicorns:
-			if rect.intersects(Rect2(oui.rect.grow(2))):
+			if rect.intersects(oui.rect.grow(2)):
 				#print("Other Unicorn here")
 				place = false
 			if rect.intersects(Rect2(border_offset, border_offset, screensize.x-(border_offset*2), screensize.y-(border_offset*2)).grow(2)):
